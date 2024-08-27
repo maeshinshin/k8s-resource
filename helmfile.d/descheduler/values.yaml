@@ -109,7 +109,7 @@ deschedulerPolicy:
         - name: RemoveDuplicates
         - name: RemovePodsHavingTooManyRestarts
           args:
-            podRestartThreshold: 100
+            podRestartThreshold: 30
             includingInitContainers: true
         - name: RemovePodsViolatingNodeAffinity
           args:
@@ -121,13 +121,13 @@ deschedulerPolicy:
         - name: LowNodeUtilization
           args:
             thresholds:
-              cpu: 20
-              memory: 20
-              pods: 20
+              cpu: 30
+              memory: 30
+              pods: 30
             targetThresholds:
-              cpu: 50
-              memory: 50
-              pods: 50
+              cpu: 70
+              memory: 70
+              pods: 70
       plugins:
         balance:
           enabled:
