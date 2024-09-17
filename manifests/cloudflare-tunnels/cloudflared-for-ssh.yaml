@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: cloudflared
-          image: cloudflare/cloudflared:2024.8.3
+          image: cloudflare/cloudflared:2024.9.1
           args: [tunnel, --config, /etc/cloudflared/config/config.yaml, run]
           livenessProbe:
             httpGet:
