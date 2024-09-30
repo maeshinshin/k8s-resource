@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-wordpress
+  namespace: demo-wordpress
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-wordpress
+  template:
+    metadata:
+      labels:
+        app: demo-wordpress
+    spec:
+      containers:
+        - name: wordpress
+          image: wordpress:6.6.2
+          ports:
+            - containerPort: 80
+              name: wordpress
+          volumeMounts:
+            - name: wordpress-storage
+              mountPath: /var/www/html
+          env:
+          - name: WORDPRESS_DB_HOST
+            value: mysql:6446
+          - name: WORDPRESS_DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mysql-cluster-secret
+                key: rootPassword
+          - name: WORDPRESS_DB_USER
+            valueFrom:
+              secretKeyRef:
+                name: mysql-cluster-secret
+                key: rootUser
+      volumes:
+        - name: wordpress-storage
+          persistentVolumeClaim:
+            claimName: pvc-demo-wordpress
