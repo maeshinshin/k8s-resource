@@ -1,0 +1,11 @@
+repositories:
+  - name: vaultwarden
+    url: https://guerzon.github.io/vaultwarden
+
+releases:
+  - name: "vaultwarden"
+    namespace: "vaultwarden"
+    chart: vaultwarden/vaultwarden
+    version: 0.29.0
+    values:
+      - ./values.yaml
