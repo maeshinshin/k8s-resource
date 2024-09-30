@@ -37,26 +37,5 @@ spec:
           secret:
             secretName: k8s-public-tunnel-credential
         - name: config
-          configMap:
-            name: cloudflared-config-for-public
-            items:
-              - key: config.yaml
-                path: config.yaml
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: cloudflared-config-for-public
-  namespace: cloudflare-tunnels
-data:
-  config.yaml: |-
-    tunnel: k8s_public_tunnel
-    credentials-file: /etc/cloudflared/creds/credentials.json
-    metrics: 0.0.0.0:2002
-    no-autoupdate: true
-    ingress:
-    - hostname: test.maesh.dev
-      service: https://google.com
-    - hostname: www.maesh.dev
-      service: hello_world
-    - service: http_status:404
+          secret:
+            secretName: k8s-public-tunnel-config
