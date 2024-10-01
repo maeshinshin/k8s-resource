@@ -42,4 +42,15 @@ spec:
         - containerPort: 8080
           name: http
           protocol: TCP
+        volumeMounts:
+        - name: rsa-key
+          readOnly: false
+          mountPath: "/secret.d"
+      volumes:
+        - name: rsa-key
+          secret:
+            secretName: vaultwarden-rsa
+            items:
+              - key: rsa_key
+                path: rsa_key.pem
       restartPolicy: Always
