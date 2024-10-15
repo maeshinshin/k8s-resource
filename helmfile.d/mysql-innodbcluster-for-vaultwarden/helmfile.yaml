@@ -6,7 +6,7 @@ releases:
   - name: "mysql"
     namespace: "vaultwarden"
     chart: mysql-operator/mysql-innodbcluster
-    version: 2.2.1
+    version: 2.2.2
     values:
       - ./values.yaml
       - ./credentials.yaml
