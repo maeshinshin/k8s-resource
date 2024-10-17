@@ -3,9 +3,12 @@ repositories:
     url: https://mysql.github.io/mysql-operator/
 
 releases:
-  - name: "mysql-operator"
-    namespace: "my-mysql-operator"
+  - name: crds-mysql-operator
+    namespace: my-mysql-operator
+    chart: ../../manifests/crds/mysql-operator
+  - name: mysql-operator
+    namespace: my-mysql-operator
     chart: mysql-operator/mysql-operator
-    version: 2.2.1
+    version: 2.2.2
     values:
       - ./values.yaml
