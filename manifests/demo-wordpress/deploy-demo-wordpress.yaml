@@ -24,16 +24,16 @@ spec:
               mountPath: /var/www/html
           env:
           - name: WORDPRESS_DB_HOST
-            value: mysql:6446
+            value: innodb:6446
           - name: WORDPRESS_DB_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: mysql-cluster-secret
+                name: demo-wordpress-ic
                 key: rootPassword
           - name: WORDPRESS_DB_USER
             valueFrom:
               secretKeyRef:
-                name: mysql-cluster-secret
+                name: demo-wordpress-ic
                 key: rootUser
       volumes:
         - name: wordpress-storage
