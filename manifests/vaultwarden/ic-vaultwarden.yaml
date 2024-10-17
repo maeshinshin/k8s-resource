@@ -7,7 +7,7 @@ spec:
   instances: 3
   version: "9.0.1"
   tlsUseSelfSigned: true
-  secretName: vaultwarden-mysql
+  secretName: vaultwarden-ic
   router:
     instances: 1
     version: "9.0.1"
