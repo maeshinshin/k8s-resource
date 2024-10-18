@@ -22,6 +22,10 @@ spec:
           volumeMounts:
             - name: wordpress-storage
               mountPath: /var/www/html
+          volumeMounts:
+            - name: php-config
+              subPath: uploads.ini
+              mountPath: /usr/local/etc/php/conf.d/uploads.ini
           env:
           - name: WORDPRESS_DB_HOST
             value: innodb:6446
@@ -39,3 +43,8 @@ spec:
         - name: wordpress-storage
           persistentVolumeClaim:
             claimName: pvc-demo-wordpress
+      volumes:
+        - name: php-config
+          configMap:
+            name: demo-wordpress-wp-php-config 
+            defaultMode: 420
