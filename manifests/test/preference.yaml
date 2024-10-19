@@ -1,0 +1,9 @@
+apiVersion: instancetype.kubevirt.io/v1beta1
+kind: VirtualMachinePreference
+metadata:
+  creationTimestamp: null
+  name: sock
+  namespace: test
+spec:
+  cpu:
+    preferredCPUTopology: preferSockets
