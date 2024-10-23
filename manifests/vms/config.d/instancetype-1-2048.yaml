@@ -3,6 +3,7 @@ kind: VirtualMachineClusterInstancetype
 metadata:
   creationTimestamp: null
   name: o-2048
+  namespace: vms
 spec:
   cpu:
     guest: 1

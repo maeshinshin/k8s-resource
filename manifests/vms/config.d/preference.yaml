@@ -4,6 +4,7 @@ metadata:
   creationTimestamp: null
   name: sock
   namespace: test
+  namespace: vms
 spec:
   cpu:
     preferredCPUTopology: preferSockets

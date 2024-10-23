@@ -2,9 +2,10 @@ apiVersion: instancetype.kubevirt.io/v1beta1
 kind: VirtualMachineClusterInstancetype
 metadata:
   creationTimestamp: null
-  name: o-256
+  name: 2-4095
+  namespace: vms
 spec:
   cpu:
-    guest: 1
+    guest: 2
   memory:
-    guest: 256Mi
+    guest: 4Gi
