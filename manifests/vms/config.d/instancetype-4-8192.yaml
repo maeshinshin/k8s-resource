@@ -2,10 +2,10 @@ apiVersion: instancetype.kubevirt.io/v1beta1
 kind: VirtualMachineClusterInstancetype
 metadata:
   creationTimestamp: null
-  name: t-4096
+  name: f-8192
   namespace: vms
 spec:
   cpu:
-    guest: 2
+    guest: 4
   memory:
-    guest: 4Gi
+    guest: 8Gi
