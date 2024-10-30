@@ -1,0 +1,47 @@
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  creationTimestamp: null
+  name: vm2
+  namespace: vms
+spec:
+  dataVolumeTemplates:
+    - metadata:
+        name: vm2
+      spec:
+        storage:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 50Gi
+          storageClassName: nfs-client
+        source:
+          http:
+            url: https://geo.mirror.pkgbuild.com/images/v20241001.267073/Arch-Linux-x86_64-cloudimg.qcow2
+  instancetype:
+    name: f-8192
+  runStrategy: Always
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      domain:
+        devices:
+          disks:
+          - name: disk0
+            disk:
+              bus: virtio
+          - name: cloudinitdisk
+            disk:
+              bus: virtio
+      terminationGracePeriodSeconds: 180
+      volumes:
+      - dataVolume:
+          name: vm2
+        name: disk0
+      - cloudInitConfigDrive:
+          secretRef:
+            name: vm2-cloud-init
+        name: cloudinitdisk
+status: {}
