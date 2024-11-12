@@ -4,6 +4,10 @@ metadata:
   name: cdi
 spec:
   config:
+    podResourceRequirements:
+      limits:
+        cpu: '4'
+        memory: 5Gi
     featureGates:
     - HonorWaitForFirstConsumer
   imagePullPolicy: IfNotPresent
