@@ -14,13 +14,14 @@ spec:
             - ReadWriteOnce
           resources:
             requests:
-              storage: 50Gi
+              storage: 20Gi
           storageClassName: nfs-client
         source:
-          http:
-            url: https://download.fedoraproject.org/pub/fedora/linux/releases/40/Cloud/x86_64/images/Fedora-Cloud-Base-Generic.x86_64-40-1.14.qcow2
+          pvc:
+            name: ubuntu-2204
+            namespace: vms
   instancetype:
-    name: t-4096
+    name: t-2048
   runStrategy: Always
   template:
     metadata:

@@ -1,0 +1,17 @@
+# https://github.com/hiroyaonoe/my-k8s-cluster/blob/30daa0da2767d6f4b490b781a1b3f119dd1ac427/argocd/manifests/playground/vm-image.yaml
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  name: ubuntu-2204
+  namespace: vms
+spec:
+  storage:
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 5Gi
+    storageClassName: nfs-client
+  source:
+    http:
+      url: https://cloud-images.ubuntu.com/noble/current/noble-server-cloudimg-amd64.img

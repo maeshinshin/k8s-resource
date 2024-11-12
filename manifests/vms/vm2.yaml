@@ -14,13 +14,14 @@ spec:
             - ReadWriteOnce
           resources:
             requests:
-              storage: 50Gi
+              storage: 20Gi
           storageClassName: nfs-client
         source:
-          http:
-            url: https://geo.mirror.pkgbuild.com/images/v20241001.267073/Arch-Linux-x86_64-cloudimg.qcow2
+          pvc:
+            name: ubuntu-2204
+            namespace: vms
   instancetype:
-    name: f-8192
+    name: t-2048
   runStrategy: Always
   template:
     metadata:
