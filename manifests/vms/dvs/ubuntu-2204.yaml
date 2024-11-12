@@ -10,8 +10,8 @@ spec:
       - ReadWriteOnce
     resources:
       requests:
-        storage: 5Gi
+        storage: 3Gi
     storageClassName: nfs-client
   source:
     http:
-      url: https://cloud-images.ubuntu.com/noble/current/noble-server-cloudimg-amd64.img
+      url: https://cloud-images.ubuntu.com/releases/focal/release/ubuntu-20.04-server-cloudimg-amd64.img
