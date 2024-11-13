@@ -1,9 +1,7 @@
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
-  creationTimestamp: null
   name: vm1
-  namespace: vms
 spec:
   dataVolumeTemplates:
     - metadata:
@@ -26,6 +24,8 @@ spec:
   template:
     metadata:
       creationTimestamp: null
+      labels:
+        vm: vm1
     spec:
       domain:
         devices:

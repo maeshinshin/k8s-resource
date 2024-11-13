@@ -26,6 +26,8 @@ spec:
   template:
     metadata:
       creationTimestamp: null
+      labels:
+        vm: vm2
     spec:
       domain:
         devices:
