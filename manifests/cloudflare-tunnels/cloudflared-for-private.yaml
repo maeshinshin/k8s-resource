@@ -38,4 +38,3 @@ spec:
         - name: config
           secret:
             secretName: k8s-private-tunnel-config
-      hostNetwork: true
