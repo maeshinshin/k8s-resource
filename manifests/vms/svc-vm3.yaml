@@ -2,17 +2,12 @@ apiVersion: v1
 kind: Service
 metadata:
   namespace: vms
-  name: vm1
+  name: vm3
 spec:
   ports:
-  - port: 22
-    protocol: TCP
-    targetPort: 22
-    name: ssh
   - port: 80
     protocol: TCP
     targetPort: 80
-    name: http
   selector:
-    vm: vm1
+    vm: vm3
   type: ClusterIP
