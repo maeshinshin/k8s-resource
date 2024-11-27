@@ -1,9 +1,14 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["config:recommended"],
-	"regexManagers": [
+	"extends": [
+		"config:recommended"
+	],
+	"customManagers": [
 		{
-			"fileMatch": ["manifests/cloudflare-tunnels/cloudflared-for-.*\\.yaml$"],
+			"customType": "regex",
+			"fileMatch": [
+				"manifests/cloudflare-tunnels/cloudflared-for-.*\\.yaml$"
+			],
 			"matchStrings": [
 				"image:\\s*(?<depName>cloudflare/cloudflared):(?<currentValue>\\S+)"
 			],
