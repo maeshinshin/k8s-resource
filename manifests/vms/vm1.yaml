@@ -16,10 +16,10 @@ spec:
           storageClassName: nfs-client
         source:
           pvc:
-            name: ubuntu-2204
+            name: almalinux-95
             namespace: vms
   instancetype:
-    name: t-2048
+    name: f-8192
   runStrategy: Always
   template:
     metadata:
