@@ -9,6 +9,6 @@ releases:
   - name: mysql-operator
     namespace: my-mysql-operator
     chart: mysql-operator/mysql-operator
-    version: 2.2.2
+    version: 2.2.3
     values:
       - ./values.yaml
