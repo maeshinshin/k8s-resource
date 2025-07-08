@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-operator-values
+  namespace: mysql-operator
+data:
+  values.yaml: |
+    image:
+      registry: container-registry.oracle.com
+      repository: mysql
+      name: community-operator
+      pullPolicy: IfNotPresent
+      # Overrides the image tag whose default is the chart appVersion.
+      tag: ""
+      pullSecrets:
+        enabled: false
+        secretName:
+
+    envs:
+      imagesPullPolicy: IfNotPresent
+      imagesDefaultRegistry:
+      imagesDefaultRepository:
+      k8sClusterDomain:
+
+    disableLookups: false
+    debugger:
+      enabled: false
+      bindip: 0.0.0.0
+      bindport: 9009
+

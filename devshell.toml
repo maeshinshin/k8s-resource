@@ -1,4 +1,7 @@
 [[commands]]
+package = "sops"
+
+[[commands]]
 name = "flux"
 package = "fluxcd"
 
