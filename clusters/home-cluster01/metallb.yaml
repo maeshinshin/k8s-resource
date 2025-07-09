@@ -23,5 +23,8 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  dependOn:
-    - name: metallb-system
+  healthChecks:
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: metallb-controller
+      namespace: metallb-system
