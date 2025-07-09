@@ -13,6 +13,7 @@ spec:
         name: piraeus-operator
         namespace: flux-system
       version: 2.9.0
+  path: ./charts/piraeus/values.yaml
   interval: 1m0s
   valuesFrom:
     - kind: ConfigMap
