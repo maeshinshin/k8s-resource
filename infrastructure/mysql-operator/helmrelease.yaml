@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: mysql-operator
-      reconcileStrategy: ChartVersion
+      reconcileStrategy: Revision
       sourceRef:
         kind: HelmRepository
         name: mysql-operator
