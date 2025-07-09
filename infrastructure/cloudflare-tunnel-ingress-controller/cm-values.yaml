@@ -10,9 +10,9 @@ data:
     # Declare variables to be passed into your templates.
     
     cloudflare:
-      accountId: ""
-      tunnelName: ""
-      apiToken: ""
+      # accountId: ""
+      # tunnelName: ""
+      # apiToken: ""
     
       # Uncomment if you would like to use an existing secret instead of the creating a new one.
       secretRef:
