@@ -20,7 +20,7 @@ data:
       imagesPullPolicy: IfNotPresent
       imagesDefaultRegistry:
       imagesDefaultRepository:
-      k8sClusterDomain:
+      k8sClusterDomain: cluster.local
 
     disableLookups: false
     debugger:
