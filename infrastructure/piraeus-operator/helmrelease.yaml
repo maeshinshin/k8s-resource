@@ -1,20 +1,20 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: cilium
-  namespace: kube-system
+  name: piraeus-operator
+  namespace: piraeus-datastore
 spec:
   chart:
     spec:
-      chart: cilium
+      chart: piraeus-operator
       reconcileStrategy: Revision
       sourceRef:
-        kind: HelmRepository
-        name: cilium
+        kind: GitRepository
+        name: piraeus-operator
         namespace: flux-system
-      version: 1.17.5
+      version: 2.9.0
   interval: 1m0s
   valuesFrom:
     - kind: ConfigMap
-      name: cilium-values
+      name: piraeus-operator-values
 
