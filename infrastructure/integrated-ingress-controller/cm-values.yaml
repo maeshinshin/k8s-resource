@@ -1284,7 +1284,7 @@ data:
       enabled: true
       cloudflare:
         secretRef:
-          name: cloudflare-secret
+          name: cloudflare-api
           accountIDKey: account_id
           tunnelNameKey: tunnel_name
           apiTokenKey: api_token
