@@ -12,5 +12,5 @@ spec:
         kind: HelmRepository
         name: integrated-ingress-controller
         namespace: flux-system
-      version: 0.1.1
+      version: 0.1.2
   interval: 1m0s
