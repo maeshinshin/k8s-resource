@@ -1,8 +1,8 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: strrl
+  name: integrated-ingress-controller
   namespace: flux-system
 spec:
   interval: 1m0s
-  url: https://helm.strrl.dev
+  url: https://maeshinshin.github.io/integrated-ingress-controller
