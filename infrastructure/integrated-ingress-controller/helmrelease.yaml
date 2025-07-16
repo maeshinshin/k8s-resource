@@ -6,7 +6,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: integrated-ingress-controller
+      chart: integrated-ingress
       reconcileStrategy: Revision
       sourceRef:
         kind: HelmRepository
