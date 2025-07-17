@@ -1,0 +1,19 @@
+apiVersion: apps.maesh.dev/v1
+kind: Growi
+metadata:
+  labels:
+    app.kubernetes.io/name: growi-manager
+    app.kubernetes.io/managed-by: kustomize
+  name: growi
+  namespace: growi-app
+spec:
+  growiappspec:
+    version: "7.2.5"
+    replicas: 1
+  mongodbspec:
+    version: "6.0"
+    replicas: 3
+  elasticsearchspec:
+    version: "8.7.0"
+    replicas: 3
+  storageclass: drdb
