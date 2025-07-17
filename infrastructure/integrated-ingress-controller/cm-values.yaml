@@ -1285,9 +1285,9 @@ data:
       cloudflare:
         secretRef:
           name: cloudflare-api
-          accountIDKey: account_id
-          tunnelNameKey: tunnel_name
-          apiTokenKey: api_token
+          accountIDKey: cloudflare-account-id
+          tunnelNameKey: cloudflare-tunnel-name
+          apiTokenKey: api-token
       ingressClass:
         name: cloudflare-tunnel
         controllerValue: strrl.dev/cloudflare-tunnel-ingress-controller
