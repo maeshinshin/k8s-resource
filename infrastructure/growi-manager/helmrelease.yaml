@@ -12,5 +12,8 @@ spec:
         kind: HelmRepository
         name: growi-manager
         namespace: flux-system
-      version: 0.2.1
+      version: 0.2.2
   interval: 1m0s
+  valuesFrom:
+    - kind: ConfigMap
+      name: growi-manager-values
