@@ -24,7 +24,6 @@ data:
               - ALL
         image:
           repository: ghcr.io/maeshinshin/integrated-ingress-controller
-          tag: v0.1.1
         resources:
           limits:
             cpu: 500m
@@ -37,7 +36,7 @@ data:
         annotations: {}
     kubernetesClusterDomain: cluster.local
     # NGINX Ingress Controller Values
-    nginxIngress:
+    nginxingress:
       enabled: true
       ## nginx configuration
       ## Ref: https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/nginx-configuration/index.md
@@ -1280,14 +1279,14 @@ data:
       ## Ref: https://github.com/kubernetes/ingress-nginx/tree/main/docs/examples/customization/ssl-dh-param
       dhParam: ""
     # Cloudflare Tunnel Ingress Controller Values
-    cloudflareTunnel:
+    cloudflaretunnel:
       enabled: true
       cloudflare:
         secretRef:
-          name: cloudflare-api
-          accountIDKey: cloudflare-account-id
-          tunnelNameKey: cloudflare-tunnel-name
-          apiTokenKey: api-token
+          name: cloudflare-secret
+          accountIDKey: account_id
+          tunnelNameKey: tunnel_name
+          apiTokenKey: api_token
       ingressClass:
         name: cloudflare-tunnel
         controllerValue: strrl.dev/cloudflare-tunnel-ingress-controller
