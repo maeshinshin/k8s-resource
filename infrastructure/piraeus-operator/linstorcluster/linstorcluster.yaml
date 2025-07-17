@@ -2,4 +2,10 @@ apiVersion: piraeus.io/v1
 kind: LinstorCluster
 metadata:
   name: linstorcluster
-spec: {}
+spec: 
+  highAvailabilityController:
+    enabled: true
+    podTemplate:
+      metadata:
+        labels:
+          pod-security.kubernetes.io/enforce: privileged
