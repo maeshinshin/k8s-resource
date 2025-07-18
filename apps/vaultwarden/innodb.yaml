@@ -1,0 +1,20 @@
+apiVersion: mysql.oracle.com/v2
+kind: InnoDBCluster
+metadata:
+  name: vaultwarden-ic
+  namespace: vaultwarden
+spec:
+  instances: 3
+  version: "9.3.0"
+  tlsUseSelfSigned: true
+  secretName: vaultwarden-ic
+  router:
+    instances: 1
+    version: "9.3.0"
+  datadirVolumeClaimTemplate:
+    storageClassName: drdb
+    accessModes: 
+      - "ReadWriteOnce"
+    resources:
+      requests:
+        storage: "10Gi"
