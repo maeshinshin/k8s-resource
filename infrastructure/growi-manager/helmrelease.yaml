@@ -1,19 +1,19 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: integrated-ingress-controller
-  namespace: integrated-ingress-controller
+  name: growi-manager
+  namespace: growi-system
 spec:
   chart:
     spec:
-      chart: integrated-ingress
+      chart: growi-manager
       reconcileStrategy: Revision
       sourceRef:
         kind: HelmRepository
-        name: integrated-ingress-controller
+        name: growi-manager
         namespace: flux-system
-      version: 0.6.0
+      version: 0.2.5
   interval: 1m0s
   valuesFrom:
     - kind: ConfigMap
-      name: integrated-ingress-controller-values
+      name: growi-manager-values

@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: vaultwarden
+  name: vaultwarden
+  namespace: vaultwarden
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: vaultwarden
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: vaultwarden
+    spec:
+      containers:
+      - env:
+        - name: ADMIN_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: ADMIN_TOKEN
+              name: vaultwarden
+        - name: DOMAIN
+          valueFrom:
+            secretKeyRef:
+              key: DOMAIN
+              name: vaultwarden
+        - name: DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              key: DATABASE_URL
+              name: vaultwarden
+        envFrom:
+        - configMapRef:
+            name: vaultwarden
+        image: docker.io/vaultwarden/server:1.34.0
+        imagePullPolicy: IfNotPresent
+        name: vaultwarden
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+      restartPolicy: Always
